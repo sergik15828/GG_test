@@ -350,6 +350,7 @@ button {
   letter-spacing: .01em;
   line-height: 1.5;
   white-space: nowrap;
+  max-width: 100%;
   background: var(--bg-muted);
   color: var(--slate-600);
 }
@@ -994,6 +995,10 @@ button {
 }
 
 @media (max-width: 400px) {
+  /* Длинные домены и скиллы ("Problem-Solving and Data Analysis") на узком
+     экране переносятся по словам вместо того, чтобы выдавливать карточку. */
+  .badges .pill { white-space: normal; }
+
   /* Совсем узкий экран: у переключателя колоды остаются иконка и счётчик, подпись уходит в aria-label. */
   .deck-link__label { display: none; }
   .drill-top__row { flex-wrap: wrap; gap: 4px 12px; }
