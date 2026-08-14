@@ -1,0 +1,23 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies (на случай если появятся)
+node_modules/
+
+# Local tooling (not part of deliverable)
+.mcp.json
+.claude/settings.local.json
