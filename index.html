@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разбор — SAT Portal</title>
+<meta name="description" content="Разбор — работа над ошибками для Digital SAT: дрилл, причина каждой ошибки, колода с интервальным повторением.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="app-header">
+  <div class="shell app-header__inner">
+    <button type="button" class="locap" id="nav-home" aria-label="Разбор — на главную">
+      <span class="locap__badge" id="locap-icon" aria-hidden="true"></span>
+      <span class="locap__text">
+        <span class="locap__brand">SAT Portal</span>
+      </span>
+      <span class="locap__sep" aria-hidden="true"></span>
+      <span class="locap__module">Разбор</span>
+    </button>
+
+    <button type="button" class="deck-link" id="nav-deck" aria-label="Открыть колоду ошибок">
+      <span class="deck-link__icon" id="deck-link-icon" aria-hidden="true"></span>
+      <span class="deck-link__label">Колода ошибок</span>
+      <span class="deck-link__count" id="deck-due-count" title="К повторению сегодня">0</span>
+    </button>
+  </div>
+</header>
+
+<main class="app-main" id="main">
+
+  <!-- Экран 1 — дашборд -->
+  <section class="screen shell" id="screen-dashboard" aria-label="Дашборд модуля Разбор"></section>
+
+  <!-- Экран 2 — дрилл / повтор колоды -->
+  <section class="screen shell shell--narrow" id="screen-drill" aria-label="Разбор вопроса" hidden>
+    <div class="drill-top">
+      <div class="drill-top__progress">
+        <div class="drill-top__row">
+          <span class="drill-counter" id="drill-counter"></span>
+          <span class="drill-mode" id="drill-mode"></span>
+        </div>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="drill-progress">
+          <span class="progress__bar" id="drill-progress-bar"></span>
+        </div>
+      </div>
+      <div class="drill-top__side">
+        <span class="timer" id="drill-timer" aria-label="Время на текущий вопрос">
+          <span class="timer__icon" id="drill-timer-icon" aria-hidden="true"></span>
+          <span class="timer__value" id="drill-time">00:00</span>
+        </span>
+        <button type="button" class="btn btn-ghost btn-sm" id="drill-exit">Выйти</button>
+      </div>
+    </div>
+
+    <article class="card question-card">
+      <div class="badges" id="q-badges"></div>
+      <div class="passage" id="q-passage" hidden></div>
+      <div class="stem" id="q-stem"></div>
+      <div class="choices" id="q-choices" role="radiogroup" aria-label="Варианты ответа"></div>
+      <div class="analysis" id="q-analysis" hidden></div>
+      <div class="reasons" id="q-reasons" hidden></div>
+      <div class="q-actions">
+        <button type="button" class="btn btn-primary btn-lg" id="btn-answer" disabled>Ответить</button>
+        <button type="button" class="btn btn-primary btn-lg" id="btn-next" hidden></button>
+        <p class="q-actions__hint" id="q-hint" hidden></p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Экран 3 — итог сессии -->
+  <section class="screen shell" id="screen-result" aria-label="Итог сессии" hidden></section>
+
+  <!-- Экран 4 — колода ошибок -->
+  <section class="screen shell" id="screen-deck" aria-label="Колода ошибок" hidden></section>
+
+</main>
+
+<footer class="app-footer">
+  <div class="shell app-footer__inner">
+    <span>SAT Portal — модуль «Разбор»</span>
+    <span class="app-footer__note" id="storage-note" hidden>Хранилище браузера недоступно: прогресс живёт до закрытия вкладки</span>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
